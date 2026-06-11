@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavLink from "./nav-links";
 
 export default function Header() {
   return (
@@ -20,40 +21,11 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-10">
-            <Link
-              href="/home"
-              className="text-sm font-medium text-green-950 transition hover:text-green-700"
-            >
-              Home
-            </Link>
+            <NavLink href="/home">Home</NavLink>
+            <NavLink href="/meals">Browse Meals</NavLink>
+            <NavLink href="/community">Community</NavLink>
 
-            <Link
-              href="/meals"
-              className="text-sm font-medium text-green-950 transition hover:text-green-700"
-            >
-              Browse Meals
-            </Link>
 
-            <Link
-              href="/community"
-              className="text-sm font-medium text-green-950 transition hover:text-green-700"
-            >
-              Community
-            </Link>
-
-            <Link
-              href="/countries"
-              className="text-sm font-medium text-green-950 transition hover:text-green-700"
-            >
-              Countries
-            </Link>
-
-            <Link
-              href="/favorites"
-              className="text-sm font-medium text-green-950 transition hover:text-green-700"
-            >
-              Favorites
-            </Link>
           </nav>
 
           {/* CTA */}
