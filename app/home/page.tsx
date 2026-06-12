@@ -4,9 +4,6 @@ export default function HomePage() {
   return (
     <>
         <HeroBanner />
-
-      <section className="relative">
-      </section>
     </>
   );
 }
