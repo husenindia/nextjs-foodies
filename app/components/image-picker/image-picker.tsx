@@ -1,7 +1,5 @@
-interface ImagePickerProps {
-    label: string,
-    name: string
-}
+import { ImagePickerProps } from "Outer/types/meals";
+
 export default function ImagePicker({label, name}: ImagePickerProps) {
     return (
         <>

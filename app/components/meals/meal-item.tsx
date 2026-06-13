@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Meal } from "Outer/types/meals";
 
 export default function MealItem({
   title,
@@ -7,7 +8,7 @@ export default function MealItem({
   image,
   summary,
   creator,
-}) {
+}: Meal) {
   return (
     <article className="group overflow-hidden rounded-3xl border border-green-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       

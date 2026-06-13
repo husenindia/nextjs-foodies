@@ -2,9 +2,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getMeal } from "Outer/lib/meals";
 
-export default async function MealDetailsPage({params}) {
+interface MealDetailsPageProps {
+  params: {
+    mealSlug: string;
+  };
+}
+export default async function MealDetailsPage({params} : MealDetailsPageProps) {
     const { mealSlug } = await params;
-
     const meal = getMeal(mealSlug);
     if(!meal) {
         notFound();
