@@ -2,7 +2,12 @@
 
 import Link from 'next/link';
 
-export default function Error({ error, reset }) {
+interface ErrorPageProps {
+  error: Error & { digest?: string };
+  reset: () => void;
+}
+
+export default function Error({ error, reset }: ErrorPageProps) {
     return (
         <main className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf] px-6">
 
