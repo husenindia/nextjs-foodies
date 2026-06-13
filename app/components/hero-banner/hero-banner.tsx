@@ -44,17 +44,17 @@ export default function HeroBanner() {
 
                         <div className="flex flex-col gap-4 sm:flex-row lg:justify-start">
                             <Link
-                                href="/dishes"
+                                href="/meals"
                                 className="rounded-full bg-green-800 px-8 py-4 font-medium text-white transition hover:bg-green-900"
                             >
                                 Explore Dishes
                             </Link>
 
                             <Link
-                                href="/countries"
+                                href="/meals/share"
                                 className="rounded-full border border-green-800 px-8 py-4 font-medium text-green-900 transition hover:bg-white/50"
                             >
-                                Browse Countries
+                                Share Meal
                             </Link>
                         </div>
                     </div>
