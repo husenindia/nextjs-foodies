@@ -15,3 +15,12 @@ export interface ImagePickerProps {
     label: string,
     name: string
 }
+
+export interface MealInput {
+  title: string;
+  summary: string;
+  instructions: string;
+  image: File;
+  creator: string;
+  creator_email: string;
+}

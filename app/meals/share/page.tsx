@@ -1,6 +1,9 @@
+'use client';
 import ImagePicker from "@/components/image-picker/image-picker";
+import { shareMeal } from "Outer/lib/actions";
 
 export default function ShareMealPage() {
+    
     return (
         <>
             <header className="relative overflow-hidden bg-gradient-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf]">
@@ -24,14 +27,15 @@ export default function ShareMealPage() {
             <main className="bg-white py-16">
                 <div className="mx-auto max-w-4xl px-6">
 
-                    <form className="rounded-3xl border border-green-100 bg-white p-8 shadow-sm md:p-10">
+                    <form className="rounded-3xl border border-green-100 bg-white p-8 shadow-sm md:p-10"
+                    action={shareMeal}> 
 
                         {/* User Information */}
                         <div className="mb-10 grid gap-6 md:grid-cols-2">
 
                             <div>
                                 <label
-                                    htmlFor="name"
+                                    htmlFor="creator"
                                     className="mb-2 block text-sm font-medium text-green-950"
                                 >
                                     Your Name
@@ -39,8 +43,8 @@ export default function ShareMealPage() {
 
                                 <input
                                     type="text"
-                                    id="name"
-                                    name="name"
+                                    id="creator"
+                                    name="creator"
                                     required
                                     className="w-full rounded-xl border border-green-200 px-4 py-3 outline-none transition focus:border-green-600"
                                 />
@@ -116,8 +120,8 @@ export default function ShareMealPage() {
                                 className="w-full rounded-xl border border-green-200 px-4 py-3 outline-none transition focus:border-green-600"
                             />
                         </div>
-                        <div>
-                            {/* <ImagePicker label="Upload image" name="image"></ImagePicker> */}
+                        <div className="mb-10">
+                            <ImagePicker label="Your image" name="image"></ImagePicker>
                         </div>
 
                         <button
