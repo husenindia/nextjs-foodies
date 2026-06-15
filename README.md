@@ -1,9 +1,9 @@
 # Foodies 🍽️
 
-A modern food-sharing web application built with Next.js, TypeScript, and Tailwind CSS.
+A modern food-sharing web application built with Next.js, TypeScript, Tailwind CSS, and SQLite.
 
 🌐 **Live Demo**
-**Preview:** https://nextjs-foodies-chi.vercel.app/
+**Preview:** https://your-app-url.com/
 
 ---
 
@@ -12,6 +12,8 @@ A modern food-sharing web application built with Next.js, TypeScript, and Tailwi
 Foodies is a community-driven recipe platform where users can discover meals from around the world and share their own recipes with others.
 
 The application provides a clean, modern, and responsive experience that allows visitors to browse meals, view detailed recipes, and contribute new dishes to the community.
+
+For simplicity and lightweight data management, the application uses a **SQLite database** to store meal information and recipe metadata. Uploaded food images are stored in the application's public images directory, while image paths and recipe details are stored in the database.
 
 ---
 
