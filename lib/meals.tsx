@@ -18,9 +18,7 @@ export function getMeal(slug: string) : Meal | undefined {
 
 
 export async function saveMeal(meal: MealInput) {
-
     const slug = slugify(meal.title, { lower: true });
-
     const extension = meal.image.name.split('.').pop();
     const fileName = `${slug}.${extension}`;
     const instructions = xss(meal.instructions);

@@ -7,6 +7,18 @@ interface MealDetailsPageProps {
     mealSlug: string;
   };
 }
+export async function generateMetadata({params}: MealDetailsPageProps) { // Name is default name given by next.js, and it looking for this kind of funciton
+    const { mealSlug } = await params;
+    const meal = getMeal(mealSlug);
+    if(!meal) {
+        notFound();
+    }
+
+    return {
+        title: meal.title,
+        description: meal.summary
+    }
+}
 export default async function MealDetailsPage({params} : MealDetailsPageProps) {
     const { mealSlug } = await params;
     const meal = getMeal(mealSlug);

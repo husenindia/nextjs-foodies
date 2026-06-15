@@ -1,36 +1,243 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Foodies 🍽️
 
-## Getting Started
+A modern food-sharing web application built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+🌐 **Live Demo**
+**Preview:** https://your-app-url.com/
+
+---
+
+## Overview
+
+Foodies is a community-driven recipe platform where users can discover meals from around the world and share their own recipes with others.
+
+The application provides a clean, modern, and responsive experience that allows visitors to browse meals, view detailed recipes, and contribute new dishes to the community.
+
+---
+
+## Features
+
+### 🏠 Home Page
+
+The home page includes:
+
+* Food image slider showcasing delicious meals.
+* Hero banner section with call-to-action buttons.
+* Responsive design optimized for desktop and mobile devices.
+* Modern food-themed user interface built with Tailwind CSS.
+
+---
+
+### 🍛 Browse Meals
+
+Users can browse all available recipes shared on the platform.
+
+Each meal card displays:
+
+* Meal image
+* Meal title
+* Creator name
+* Short summary
+* View Details button
+
+Features include:
+
+* Responsive card grid layout
+* Hover animations
+* Optimized image rendering using Next.js Image component
+* Fast page loading and navigation
+
+---
+
+### 📖 Meal Details
+
+Clicking on a meal opens a dedicated details page containing complete recipe information.
+
+Meal model:
+
+```typescript
+export interface Meal {
+  title: string;
+  slug: string;
+  image: string;
+  summary: string;
+  cooking_instructions: string;
+  creator: string;
+  creator_email: string;
+}
+```
+
+Displayed information:
+
+* Featured food image
+* Meal title
+* Creator name
+* Creator email (clickable mailto link)
+* Recipe summary
+* Detailed cooking instructions
+
+---
+
+### ➕ Share Meal
+
+Visitors can contribute their own recipes using the Share Meal page.
+
+The form contains:
+
+* Your Name
+* Your Email
+* Meal Title
+* Short Summary
+* Cooking Instructions
+* Food Image Upload
+
+Features:
+
+* Custom image picker
+* Image preview before submission
+* Responsive form layout
+* User-friendly validation
+
+---
+
+## Image Upload Process
+
+When a user uploads a recipe image:
+
+1. The user selects an image from their device.
+2. A preview is displayed instantly.
+3. The image is stored inside the application's public images folder.
+4. The image path is saved in the database.
+5. The recipe becomes publicly visible on the Browse Meals page.
+
+Example:
+
+```text
+/public/images/burger.jpg
+```
+
+Stored in database:
+
+```text
+/images/burger.jpg
+```
+
+---
+
+## User Workflow
+
+### Browse Recipes
+
+1. Open the application.
+2. Navigate to Browse Meals.
+3. Explore available recipes.
+4. Click a meal card.
+5. View complete recipe details.
+
+### Share a Recipe
+
+1. Navigate to Share Meal.
+2. Enter recipe information.
+3. Upload a food image.
+4. Submit the form.
+5. Recipe is stored in the database.
+6. Uploaded image is saved in the public images folder.
+7. Recipe becomes visible to all users on the Browse Meals page.
+
+---
+
+## Technology Stack
+
+### Frontend
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Next.js Server Actions
+* Node.js
+* Database Integration
+
+### Image Handling
+
+* Next.js Image Component
+* File Upload Support
+* Image Preview Functionality
+
+---
+
+## Project Structure
+
+```text
+app/
+├── page.tsx
+├── not-found.tsx
+├── meals/
+│   ├── page.tsx
+│   ├── share/
+│   │   └── page.tsx
+│   └── [slug]/
+│       └── page.tsx
+│
+components/
+├── header/
+├── banner/
+├── meals/
+├── image-picker/
+│
+lib/
+├── meals.ts
+│
+public/
+└── images/
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Future Enhancements
 
-To learn more about Next.js, take a look at the following resources:
+* Authentication and user accounts
+* Recipe categories
+* Search and filtering
+* Favorites and bookmarks
+* Ratings and reviews
+* Pagination
+* Admin moderation panel
+* Cloud image storage support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project was built for learning and demonstration purposes using Next.js, TypeScript, and Tailwind CSS.

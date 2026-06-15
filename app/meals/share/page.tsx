@@ -1,9 +1,15 @@
 'use client';
 import ImagePicker from "@/components/image-picker/image-picker";
+import MealsFormsSubmit from "@/components/meals/meals-forms-submit";
 import { shareMeal } from "Outer/lib/actions";
+import { useActionState } from "react";
+
+const initialState = {
+  message: null as string | null,
+};
 
 export default function ShareMealPage() {
-    
+    const [state, formAction] = useActionState(shareMeal, initialState);
     return (
         <>
             <header className="relative overflow-hidden bg-gradient-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf]">
@@ -28,7 +34,7 @@ export default function ShareMealPage() {
                 <div className="mx-auto max-w-4xl px-6">
 
                     <form className="rounded-3xl border border-green-100 bg-white p-8 shadow-sm md:p-10"
-                    action={shareMeal}> 
+                    action={formAction}> 
 
                         {/* User Information */}
                         <div className="mb-10 grid gap-6 md:grid-cols-2">
@@ -52,7 +58,7 @@ export default function ShareMealPage() {
 
                             <div>
                                 <label
-                                    htmlFor="email"
+                                    htmlFor="creator_email"
                                     className="mb-2 block text-sm font-medium text-green-950"
                                 >
                                     Your Email
@@ -60,8 +66,8 @@ export default function ShareMealPage() {
 
                                 <input
                                     type="email"
-                                    id="email"
-                                    name="email"
+                                    id="creator_email"
+                                    name="creator_email"
                                     required
                                     className="w-full rounded-xl border border-green-200 px-4 py-3 outline-none transition focus:border-green-600"
                                 />
@@ -123,14 +129,9 @@ export default function ShareMealPage() {
                         <div className="mb-10">
                             <ImagePicker label="Your image" name="image"></ImagePicker>
                         </div>
-
-                        <button
-                            type="submit"
-                            className="rounded-full bg-green-800 px-8 py-4 font-medium text-white transition hover:bg-green-900"
-                        >
-                            Share Meal
-                        </button>
-
+                        {state.message && <p className="text-red-700 text-2xl">{state.message}</p>}
+                        <MealsFormsSubmit>
+                        </MealsFormsSubmit>
                     </form>
 
                 </div>
