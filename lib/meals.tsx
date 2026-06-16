@@ -1,12 +1,8 @@
 // import fs from 'node:fs';
-import sql from 'better-sqlite3';
 import { Meal, MealInput } from 'Outer/types/meals';
 import slugify from 'slugify';
 import xss from 'xss';
-
 import { prisma } from "./prisma";
-
-const db = new sql('meals.db');
 
 export async function getMeals() {
     return prisma.meal.findMany();
