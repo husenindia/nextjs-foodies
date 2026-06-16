@@ -42,7 +42,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
                     </Link>
                 </div>
 
-                {process.env.NODE_ENV === 'development' && error?.message && (
+                {error?.message && (
                     <p className="mt-8 rounded-xl bg-red-50 p-4 text-sm text-red-600">
                         {error.message}
                     </p>
