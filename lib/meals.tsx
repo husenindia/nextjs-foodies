@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+// import fs from 'node:fs';
 import sql from 'better-sqlite3';
 import { Meal, MealInput } from 'Outer/types/meals';
 import slugify from 'slugify';
@@ -29,17 +29,17 @@ export async function saveMeal(meal: MealInput) {
 
     const instructions = xss(meal.instructions);
 
-    const stream = fs.createWriteStream(
-        `public/images/${fileName}`
-    );
+    // const stream = fs.createWriteStream(
+    //     `public/images/${fileName}`
+    // );
 
-    const bufferedImage = await meal.image.arrayBuffer();
+    // const bufferedImage = await meal.image.arrayBuffer();
 
-    stream.write(Buffer.from(bufferedImage), (error) => {
-        if (error) {
-            throw new Error("Saving image failed");
-        }
-    });
+    // stream.write(Buffer.from(bufferedImage), (error) => {
+    //     if (error) {
+    //         throw new Error("Saving image failed");
+    //     }
+    // });
 
     await prisma.meal.create({
         data: {
