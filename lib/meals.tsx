@@ -15,37 +15,30 @@ export async function getMeal(slug: string) {
         },
     });
 }
-
 export async function saveMeal(meal: MealInput) {
+  try {
     const slug = slugify(meal.title, { lower: true });
 
     const extension = meal.image.name.split(".").pop();
-
     const fileName = `${slug}.${extension}`;
 
     const instructions = xss(meal.instructions);
 
-    // const stream = fs.createWriteStream(
-    //     `public/images/${fileName}`
-    // );
-
-    // const bufferedImage = await meal.image.arrayBuffer();
-
-    // stream.write(Buffer.from(bufferedImage), (error) => {
-    //     if (error) {
-    //         throw new Error("Saving image failed");
-    //     }
-    // });
-
-    await prisma.meal.create({
-        data: {
-            title: meal.title,
-            summary: meal.summary,
-            instructions,
-            creator: meal.creator,
-            creator_email: meal.creator_email,
-            image: fileName,
-            slug,
-        },
+    const result = await prisma.meal.create({
+      data: {
+        title: meal.title,
+        summary: meal.summary,
+        instructions,
+        creator: meal.creator,
+        creator_email: meal.creator_email,
+        image: fileName,
+        slug,
+      },
     });
+
+    return result;
+  } catch (error) {
+    console.error("Prisma create failed:", error);
+    throw error;
+  }
 }
