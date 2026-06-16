@@ -9,7 +9,7 @@ interface ErrorPageProps {
 
 export default function Error({ error, reset }: ErrorPageProps) {
     return (
-        <main className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf] px-6">
+        <main className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-linear-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf] px-6">
 
             {/* Background Blobs */}
             <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-green-200/30 blur-3xl"></div>
