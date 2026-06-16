@@ -12,7 +12,7 @@ export default function ShareMealPage() {
     const [state, formAction] = useActionState(shareMeal, initialState);
     return (
         <>
-            <header className="relative overflow-hidden bg-gradient-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf]">
+            <header className="relative overflow-hidden bg-linear-to-br from-[#eef6e8] via-[#e8f1df] to-[#dce8cf]">
 
                 <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-green-200/30 blur-3xl"></div>
                 <div className="absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-green-300/20 blur-3xl"></div>
