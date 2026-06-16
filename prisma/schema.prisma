@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Meal {
+  id             Int    @id @default(autoincrement())
+  title          String
+  slug           String @unique
+  summary        String
+  instructions   String
+  image          String
+  creator        String
+  creator_email  String
+}

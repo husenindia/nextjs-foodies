@@ -28,6 +28,7 @@ export async function shareMeal(prevState: { message: string | null }, formData:
         };
         
     }
+    //await saveMeal(meal);
     await saveMeal(meal);
     revalidatePath("/meals"); // Revalidate the /meals page cache so newly added or updated meals appear immediately.
     redirect('/meals');

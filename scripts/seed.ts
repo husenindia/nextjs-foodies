@@ -1,15 +1,5 @@
-require("dotenv").config();
-
-const { PrismaClient } = require("./lib/generated/prisma/client");
-const { PrismaNeon } = require("@prisma/adapter-neon");
-
-const adapter = new PrismaNeon({
-  connectionString: process.env.DATABASE_URL,
-});
-
-const prisma = new PrismaClient({
-  adapter,
-});
+import "dotenv/config";
+import { prisma } from "../lib/prisma";
 
 const mealsData = [
   {
@@ -173,6 +163,7 @@ const mealsData = [
     creator_email: "sophiagreen@example.com",
   },
 ];
+
 
 async function main() {
   const result = await prisma.meal.createMany({
