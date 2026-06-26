@@ -3,7 +3,7 @@
 A modern food-sharing web application built with Next.js, TypeScript, Tailwind CSS, and SQLite.
 
 🌐 **Live Demo**
-**Preview:** https://nextjs-foodies-ekql28a2p-husenindias-projects.vercel.app/
+**Preview:** https://nextjs-foodies-chi.vercel.app/
 
 ---
 
